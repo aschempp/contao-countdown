@@ -1,4 +1,4 @@
-<?php if (!defined('TL_ROOT')) die('You can not access this file directly!');
+<?php
 
 /**
  * TYPOlight webCMS
@@ -35,14 +35,14 @@ class Countdown extends Frontend
 		
 		if ($arrTag[0] == 'countdown' && count($arrTag) == 4)
 		{
-			$objDate = new Date($arrTag[1]);
-			
-			$years = date('Y', $objDate->timestamp) - date('Y');
-			$end = date('z', $objDate->timestamp);
+			$objDate = new Date($arrTag[1], 'Y-m-d');
+
+			$years = date('Y', $objDate->tstamp) - date('Y');
+			$end = date('z', $objDate->tstamp);
 			$start = date('z');
 			
 			$days = ($years * 365) + ($end - $start);
-			
+
 			if ($days > 0)
 				return sprintf($arrTag[2], $days);
 			else

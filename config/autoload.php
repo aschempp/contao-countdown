@@ -27,7 +27,9 @@
 
 
 /**
- * Hooks
+ * Register the classes
  */
-$GLOBALS['TL_HOOKS']['replaceInsertTags'][] = array('Countdown', 'replaceTags');
-
+ClassLoader::addClasses(array
+(
+    'Contao\Countdown' => 'system/modules/countdown/Countdown.php',
+));
