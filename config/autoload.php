@@ -31,5 +31,5 @@
  */
 ClassLoader::addClasses(array
 (
-    'Contao\Countdown' => 'system/modules/countdown/Countdown.php',
+    'Countdown' => 'system/modules/countdown/Countdown.php',
 ));
